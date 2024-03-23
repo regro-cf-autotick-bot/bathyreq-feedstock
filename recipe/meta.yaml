@@ -1,5 +1,5 @@
 {% set name = "BathyReq" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bathyreq-{{ version }}.tar.gz
-  sha256: 261422f0dae837fcbe6f698f8951044e259331b7d9dbe12b9d070a92ddce8948
+  sha256: c11923d30714c9a215e3643774224121e38c5a854e055ecb6fcf41fa796375c3
 
 build:
   noarch: python
