@@ -1,5 +1,5 @@
 {% set name = "BathyReq" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bathyreq-{{ version }}.tar.gz
-  sha256: c11923d30714c9a215e3643774224121e38c5a854e055ecb6fcf41fa796375c3
+  sha256: 2bf13672114f0fc7d2b80645b5f0480c27631c0faca23f08a606314d87854bfc
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - geopy
     - python >=3.10
     - python-dotenv
     - rasterio
