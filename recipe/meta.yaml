@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "BathyReq" %}
 {% set version = "1.1.0" %}
 
@@ -6,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bathyreq-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bathyreq-{{ version }}.tar.gz
   sha256: 2bf13672114f0fc7d2b80645b5f0480c27631c0faca23f08a606314d87854bfc
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools >=61.0
     - pip
   run:
     - geopy
-    - python >=3.10
+    - python >={{ python_min }}
     - python-dotenv
     - rasterio
     - requests
@@ -34,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/bathyreq/
